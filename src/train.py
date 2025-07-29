@@ -10,6 +10,7 @@ from pydantic import BaseModel
 import openai
 import re
 import Levenshtein
+import asyncio
 
 SYSTEM_PROMPT = """
 You are an expert in transforming standard German into German Spoon Language or Löffelsprache.
@@ -106,7 +107,7 @@ async def rollout(model: art.Model, pair: SentencePair) -> art.Trajectory:
 async def main():
     data = load_data("data/german_spoon.csv")
     random.seed(42)
-    backend = LocalBackend(path="./.art")
+    backend = LocalBackend()
     model = art.TrainableModel(
         name="001-german-spoon",
         project="SpoonRL",
@@ -135,4 +136,4 @@ async def main():
         )
     
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
