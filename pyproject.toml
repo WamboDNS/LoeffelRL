@@ -1,0 +1,14 @@
+[project]
+name = "loeffelrl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "datasets>=4.0.0",
+    "huggingface-hub>=0.34.3",
+    "openpipe-art>=0.4.4",
+    "peft>=0.16.0",
+    "python-dotenv>=1.1.1",
+    "transformers>=4.54.0",
+]
